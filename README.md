@@ -3,10 +3,10 @@ Python script that uses Text-To-Speech to say the current weather in specified l
 
 
 ## How It Works
-1) Raw weather data is pulled from `Dark Sky API` via HTTP request
-2) Friendly summary is formated from raw data
-2) `gTTS` is used to generate `.MP3` audio file from text
-3) `mpg123` plays generated file
+1. Raw weather data is pulled from `Dark Sky API` via HTTP request
+2. Friendly summary is formated from raw data
+2. `gTTS` is used to generate `.MP3` audio file from text
+3. `mpg123` plays generated file
 
 Check `output-example/` to hear how it sounds.
 
