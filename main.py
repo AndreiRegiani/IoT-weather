@@ -24,10 +24,10 @@ def get_weather():
     }
 
     url = "{api}/{key}/{lat},{long}?units={unit}".format(**url_params)
-    print("Requesting weather...")
+    print("[HTTP] requesting weather...")
     r = requests.get(url)
     if r.status_code != 200:
-        print("Error while requesting weather")
+        print("[Error] failed to request weather")
         return False
 
     data = r.json()
@@ -40,20 +40,20 @@ def get_weather():
 
 
 def say_loading():
-    speech = "Checking weather..."
-    print("[SPEECH]", speech)
+    speech = "checking weather..."
+    print("[AUDIO]", speech)
     filename = 'loading.mp3'
     if not os.path.isfile('./' + filename):
-        print("Generating: " + filename)
+        print("[TTS] generating: " + filename)
         tts = gTTS(text=speech, lang='en').save(filename)
     play_sound(filename)
 
 
 def say_weather(speech):
     filename = 'weather.mp3'
-    print("Generating weather speech...")
+    print("[TTS] generating weather speech...")
     tts = gTTS(text=speech, lang='en').save(filename)
-    print("[SPEECH]", speech)
+    print("[AUDIO]", speech)
     play_sound(filename)
 
 
